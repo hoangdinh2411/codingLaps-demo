@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    height: 100%;
+    background : linear-gradient(lightgreen, blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    width: 400px;
+    height: 200px;
+    height: auto;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 20px 14px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+
+}
+input[type="radio"]{
+    display: none;
+}
+.wrapper .title{
+    font-size: 30px;
+    font-weight: 600;
+    width: 100%;
+    float: left;
+    padding: 10px ;
+    margin-bottom: 20px;
+
+}
+.wrapper .option{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px ;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 18px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.wrapper .option .dot{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.wrapper .option .dot::before{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 4px;
+    left: 4px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+
+}
+.wrapper .price{
+    margin-left: auto;    
+}
+
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2,
+#option-3:checked:checked ~ .option-3{
+    background-color: rgba(0, 0, 255,0.1);
+    border-color: rgb(0, 0, 255);
+    font-size: 20px;
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot,
+#option-3:checked:checked ~ .option-3 .dot{
+    background-color: blue;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before,
+#option-3:checked:checked ~ .option-3 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+}

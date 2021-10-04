@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #0069d9;
+}
+
+.wrapper{
+    width: 400px;
+    height: 100px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 14px 20px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.wrapper .option{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 10px;
+    margin: 0 10px;
+    background: #fff;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+
+    
+}
+
+.wrapper .option .dot{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:lightgrey ;
+}
+
+.wrapper .option .dot::before{
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    transform: scale(1.5);
+    background: #0069d9;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.wrapper .option span{
+    color: #ccc;
+    font-size: 25px;
+}
+
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+    background: #0069d9;
+    border-color: #0069d9;
+}
+
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot{
+    background: #fff;
+}
+
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+    color: #fff;
+}
+
+input[type="radio"]{
+    display: none;
+}

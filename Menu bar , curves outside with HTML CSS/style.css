@@ -1,0 +1,239 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    min-height: 1000vh;
+    background-color: lightblue;
+}
+.container{
+    width:100% ;
+    position: relative;
+}
+.menu-bar-icon{
+    position: fixed;
+    top: 0;
+    left: 350px;
+    width: calc(100% - 350px);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    transition: all 0.3s;
+}
+#switch:checked ~.menu-bar-icon{
+    left: 90px;
+    width: calc(100% - 260px);
+
+}
+.menu-bar-icon ion-icon{
+    margin-right: 20px;
+}
+
+
+.menubar{
+    width: 320px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+#switch:checked ~.menubar{
+    width: 60px
+}
+.menu-top{
+    position: relative;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+}
+
+.menu-top .logo{
+    height: 60px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-top .logo >ion-icon{
+    font-size: 30px;
+}
+
+.menu-top .website-name{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+#switch:checked ~.menubar .website-name{
+    opacity: 0;
+}
+.list{
+    list-style: none;
+    padding:30px 0 90px 10px ;
+    width: 100%;
+    flex:1;
+    overflow-x: auto;
+}
+.list::-webkit-scrollbar{
+    display: none;
+}
+.list__item{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+.list__item b:nth-child(1){
+    position: absolute;
+    display: none;
+    top: -20px;
+    right: 0;
+    width: 50%;
+    height: 20px;
+    background-color: lightblue;
+    transition: 0.3s;
+}
+
+.list__item b:nth-child(1)::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-bottom-right-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);;
+
+}
+.list__item b:nth-child(2){
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 50%;
+    height: 20px;
+    background-color: lightblue;
+    transition: 0.3s;
+
+}
+
+.list__item b:nth-child(2)::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);;
+
+}
+.list__item.active b:nth-child(1),
+.list__item.active b:nth-child(2){
+    display: block;
+}
+.list__item a{
+    flex: 1;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+.list__item.active  a{
+    background-color: lightblue;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: black;
+}
+
+.list__item .icons{
+    position: relative;
+    height: 60px;
+    width: 70px;
+    line-height: 60px;
+    padding-left: 10px;
+
+}
+
+
+.list__item a >ion-icon{
+    font-size: 20px;
+}
+
+.title{
+    flex: 1;
+    line-height: 60px;
+}
+
+#switch:checked ~.menubar .list__item .title{
+    display: none;
+}
+.member-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:black;
+}
+.member-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.member-img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+#switch:checked ~.menubar .member-img img{
+    width: 40px;
+    height: 40px;
+}
+#switch:checked ~.menubar .member-info{
+    display: none;
+}
+.member-info{
+    color: white;
+    flex:1;
+    text-align: center;
+}
+
+.member-info h2{
+    font-size: 32px;
+    font-weight: 600;
+    word-spacing: 2px;
+}
+
+.member-info h4{
+    font-size: 20px;
+}
+
+.details-icon {
+    width:40px;
+    height: 60px;
+    line-height: 80px;
+    text-align: center;
+    color: white;
+
+}
+
+#switch:checked ~.menubar .details-icon{
+    display: none;
+}
+

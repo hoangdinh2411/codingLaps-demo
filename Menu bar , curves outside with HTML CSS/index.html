@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" name="" id="switch" hidden>
+        <label for="switch" class="menu-bar-icon">
+            <ion-icon name="menu-outline"></ion-icon>
+            Menu bar
+        </label>
+        <div class="menubar">
+            
+            <div class="menu-top">
+                <div class="logo">
+                    <ion-icon name="planet-outline"></ion-icon>
+                </div>
+                <h3 class="website-name">
+                    Curves Menu
+                </h3>
+            </div>
+            <ul class="list">
+                <li class="list__item active">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <div class="icons">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <span class="title">
+                            Home
+                        </span>
+                    </a>
+                </li>
+                <li class="list__item ">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icons">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Message
+                        </span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icons">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Document
+                        </span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icons">
+                            <ion-icon name="albums-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Albums
+                        </span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icons">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Help
+                        </span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icons">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Setting
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <div class="member-details">
+                <div class="member-img">
+                    <img src="sider.jpg" alt="">
+                </div>
+                <div class="member-info">
+                    <h2 class="member-name">William Dinh</h2>
+                    <h4 class="job">Web Developer</h4>
+                </div>
+                <div class="details-icon">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Main javascript -->
+    <script>
+        const listItems = document.querySelectorAll('.list__item');
+        const listItemsLen = listItems.length;
+        for (let i = 0; i < listItemsLen; i++) {
+            listItems[i].onclick = ()=>{
+                    let j=0;
+                    while(j< listItemsLen){
+                        listItems[j++].className ="list__item"
+                    }
+                    listItems[i].classList.add('active')
+
+              
+            }
+            
+        }
+    </script>
+    <!-- Icon Javascript -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
